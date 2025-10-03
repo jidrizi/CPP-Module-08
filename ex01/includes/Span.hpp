@@ -18,6 +18,7 @@
 # include <exception>
 # include <algorithm>
 # include <vector>
+# include <limits>
 
 
 class FullException : public std::exception

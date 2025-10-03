@@ -25,7 +25,7 @@ Span::Span(unsigned int _n) : n(_n)
 	std::cout << "Span constructor with parameters called" << std::endl;
 }
 
-Span::Span(Span const &src) : n(src.n), v(src.v)
+Span::Span(Span const &src) : v(src.v), n(src.n)
 {
 	std::cout << "Span copy constructor called" << std::endl;
 }
@@ -54,11 +54,35 @@ void	Span::addNumber(int value)
 		this->v.push_back(value);
 }
 
-void Span::shortestSpan()
+int Span::shortestSpan()
 {
+	if (this->v.empty() || this->v.size() == 1)
+		throw (SpanException());
 	
+	std::vector<int> tmp = this->v;
+	std::sort(tmp.begin(), tmp.end());
+	int	minSpan = std::numeric_limits<int>::max();
+	int tmpSpan;
+	for (size_t i = 0; i < v.size() - 1; ++i)
+	{
+		tmpSpan = tmp[i + 1] - tmp[i];
+		if (tmpSpan < minSpan)
+			minSpan = tmpSpan;
+	}
+
+	return (minSpan);
 }
 
+int	Span::longestSpan()
+{
+	if (this->v.empty() || this->v.size() == 1)
+		throw (SpanException());
+
+	std::vector<int>::const_iterator	maxElement = std::max_element(this->v.begin(), this->v.end());
+	std::vector<int>::const_iterator	minElement = std::min_element(this->v.begin(), this->v.end());
+
+	return (*maxElement - *minElement);
+}
 
 //excpetion class
 const char* FullException::what() const throw()
