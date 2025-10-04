@@ -49,10 +49,11 @@ class Span
 		~Span();
 	
 	//member functions
-		void	addNumber(int value);
-		int		shortestSpan();
-		int		longestSpan();
-		void	addMultipleNumbers();
+		void				addNumber(int value);
+		int					shortestSpan();
+		int					longestSpan();
+		void				addMultipleNumbers(std::vector<int> lotsOf);
+		void				printVector();
 
 };
 

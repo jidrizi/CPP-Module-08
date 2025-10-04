@@ -15,24 +15,24 @@
 //constructors
 Span::Span()
 {
-	std::cout << "Span default constructor called" << std::endl;
+	std::cout << "\033[32mSpan default constructor called\033[0m" << std::endl;
 	(void) v;
 	n = 0;
 }
 
 Span::Span(unsigned int _n) : n(_n)
 {
-	std::cout << "Span constructor with parameters called" << std::endl;
+	std::cout << "\033[32mSpan constructor with parameters called\033[0m" << std::endl;
 }
 
 Span::Span(Span const &src) : v(src.v), n(src.n)
 {
-	std::cout << "Span copy constructor called" << std::endl;
+	std::cout << "\033[32mSpan copy constructor called\033[0m" << std::endl;
 }
 
 Span&	Span::operator=(Span const &src)
 {
-	std::cout << "Span copy assignment operator called" << std::endl;
+	std::cout << "\033[32mSpan copy assignment operator called\033[0m" << std::endl;
 	this->n = src.n;
 	this->v = src.v;
 	return (*this);
@@ -40,7 +40,7 @@ Span&	Span::operator=(Span const &src)
 
 Span::~Span()
 {
-	std::cout << "Span destructor called" << std::endl;
+	std::cout << "\033[32mSpan destructor called\033[0m" << std::endl;
 }
 
 
@@ -82,6 +82,24 @@ int	Span::longestSpan()
 	std::vector<int>::const_iterator	minElement = std::min_element(this->v.begin(), this->v.end());
 
 	return (*maxElement - *minElement);
+}
+
+
+
+void	Span::printVector()
+{
+	if (this->v.empty())
+	{
+		std::cout << "V: Oopsie\n";
+		return ;
+	}
+	for (unsigned int i = 0; i < this->n - 1; i++)
+		std::cout << "[" << this->v[i] << "]";
+}
+
+void	Span::addMultipleNumbers(std::vector<int> lotsOf)
+{
+	this->v.insert(this->v.end(), lotsOf.begin(), lotsOf.end());
 }
 
 //excpetion class

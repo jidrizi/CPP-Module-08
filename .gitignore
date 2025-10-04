@@ -1,6 +1,7 @@
 # Non git ignore template stuff
 bin
 cpp08
+.vscode
 
 
 # Prerequisites

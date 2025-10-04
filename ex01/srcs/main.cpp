@@ -55,13 +55,17 @@ int main()
 	//subject said to test with atleast 10,000 numbers
 	try
 	{
-		unsigned int		n = 10000;
-		Span				sp = Span(n);
+		unsigned int		_n = 10000;
+		Span				sp = Span(_n);
 		std::vector<int>	lotsOfNumbers;
 
-		lotsOfNumbers.reserve(n);
-		for (unsigned int i = 0; i < n; ++i)
-			
+		for (unsigned int i = 0; i < _n; i++)
+			lotsOfNumbers.push_back(i);
+		std::cout << std::endl;
+		sp.addMultipleNumbers(lotsOfNumbers);
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+		std::cout << "Succes! No exception was thrown." << std::endl;
 	}
 	catch(const std::exception& e)
 	{
