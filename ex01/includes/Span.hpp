@@ -52,6 +52,7 @@ class Span
 		void	addNumber(int value);
 		int		shortestSpan();
 		int		longestSpan();
+		void	addMultipleNumbers();
 
 };
 
