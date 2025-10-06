@@ -81,3 +81,27 @@ int main()
 // 	}
 // 	return 0;
 // }
+
+
+//another short main with bigger numbers idk what other test i could do since
+// the main they gave us tests most of the stuff
+
+// int main() 
+// {
+// 	MutantStack<int> m;
+// 	m.push(5000000);
+// 	m.push(6000000);
+// 	m.push(4000000);
+
+// 	MutantStack<int>::iterator it = m.begin();
+// 	MutantStack<int>::iterator ite = m.end();
+
+// 	while (it != ite)
+// 	{
+// 		std::cout << *it << " ";
+// 		++it;
+// 	}
+// 	std::cout << std::endl;
+
+// 	return 0;
+// }
